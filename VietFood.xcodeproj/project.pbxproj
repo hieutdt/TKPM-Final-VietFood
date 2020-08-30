@@ -3,18 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B29324E3B16DD8F6FABFB16 /* Pods_VietFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D0991ACC43AC54E516FAE1 /* Pods_VietFoodTests.framework */; };
+		9D400B5C1D3868ED2DE9B94F /* Pods_VietFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487173BB86AAE61DCE15B0AF /* Pods_VietFood.framework */; };
 		D209C1DB24FB37A400690F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209C1DA24FB37A400690F38 /* AppDelegate.swift */; };
-		D209C1DD24FB37A400690F38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209C1DC24FB37A400690F38 /* SceneDelegate.swift */; };
-		D209C1DF24FB37A400690F38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209C1DE24FB37A400690F38 /* ViewController.swift */; };
-		D209C1E224FB37A400690F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D209C1E024FB37A400690F38 /* Main.storyboard */; };
+		D209C1DF24FB37A400690F38 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209C1DE24FB37A400690F38 /* DashboardViewController.swift */; };
 		D209C1E524FB37A400690F38 /* VietFood.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D209C1E324FB37A400690F38 /* VietFood.xcdatamodeld */; };
 		D209C1E724FB37A500690F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D209C1E624FB37A500690F38 /* Assets.xcassets */; };
 		D209C1EA24FB37A500690F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D209C1E824FB37A500690F38 /* LaunchScreen.storyboard */; };
 		D209C1F524FB37A500690F38 /* VietFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209C1F424FB37A500690F38 /* VietFoodTests.swift */; };
+		D24E816D24FB3D51003E91BF /* ImageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E816C24FB3D51003E91BF /* ImageCarousel.swift */; };
+		D24E816E24FB3D51003E91BF /* ImageCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24E816C24FB3D51003E91BF /* ImageCarousel.swift */; };
+		D266D5E124FB618E00985735 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5E024FB618E00985735 /* ViewExtensions.swift */; };
+		D266D5E224FB618E00985735 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5E024FB618E00985735 /* ViewExtensions.swift */; };
+		D266D5E424FB7B2E00985735 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5E324FB7B2E00985735 /* ButtonExtensions.swift */; };
+		D266D5E524FB7B2E00985735 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5E324FB7B2E00985735 /* ButtonExtensions.swift */; };
+		D266D5EB24FB7EB500985735 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5EA24FB7EB500985735 /* ColorExtensions.swift */; };
+		D266D5EC24FB7EB500985735 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5EA24FB7EB500985735 /* ColorExtensions.swift */; };
+		D266D5EE24FB7F9800985735 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5ED24FB7F9800985735 /* CameraViewController.swift */; };
+		D266D5EF24FB7F9800985735 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5ED24FB7F9800985735 /* CameraViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,11 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F21BAE2228FD39FCB061CCE /* Pods-VietFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VietFood.debug.xcconfig"; path = "Target Support Files/Pods-VietFood/Pods-VietFood.debug.xcconfig"; sourceTree = "<group>"; };
+		487173BB86AAE61DCE15B0AF /* Pods_VietFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VietFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80D0991ACC43AC54E516FAE1 /* Pods_VietFoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VietFoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94450AADB078D1D0EA544C3E /* Pods-VietFoodTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VietFoodTests.release.xcconfig"; path = "Target Support Files/Pods-VietFoodTests/Pods-VietFoodTests.release.xcconfig"; sourceTree = "<group>"; };
 		D209C1D724FB37A400690F38 /* VietFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VietFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D209C1DA24FB37A400690F38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D209C1DC24FB37A400690F38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D209C1DE24FB37A400690F38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D209C1E124FB37A400690F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D209C1DE24FB37A400690F38 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		D209C1E424FB37A400690F38 /* VietFood.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VietFood.xcdatamodel; sourceTree = "<group>"; };
 		D209C1E624FB37A500690F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D209C1E924FB37A500690F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +52,13 @@
 		D209C1F024FB37A500690F38 /* VietFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VietFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D209C1F424FB37A500690F38 /* VietFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VietFoodTests.swift; sourceTree = "<group>"; };
 		D209C1F624FB37A500690F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D24E816C24FB3D51003E91BF /* ImageCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCarousel.swift; sourceTree = "<group>"; };
+		D266D5E024FB618E00985735 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		D266D5E324FB7B2E00985735 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
+		D266D5EA24FB7EB500985735 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		D266D5ED24FB7F9800985735 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		DDDD02F98D4293AB67460027 /* Pods-VietFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VietFood.release.xcconfig"; path = "Target Support Files/Pods-VietFood/Pods-VietFood.release.xcconfig"; sourceTree = "<group>"; };
+		ECCBB7BC091BA3F3FF5FD3BA /* Pods-VietFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VietFoodTests.debug.xcconfig"; path = "Target Support Files/Pods-VietFoodTests/Pods-VietFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D400B5C1D3868ED2DE9B94F /* Pods_VietFood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +74,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B29324E3B16DD8F6FABFB16 /* Pods_VietFoodTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2033075E05723BD2A31EC8AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				487173BB86AAE61DCE15B0AF /* Pods_VietFood.framework */,
+				80D0991ACC43AC54E516FAE1 /* Pods_VietFoodTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		578D61E686E0F0414A6B3548 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F21BAE2228FD39FCB061CCE /* Pods-VietFood.debug.xcconfig */,
+				DDDD02F98D4293AB67460027 /* Pods-VietFood.release.xcconfig */,
+				ECCBB7BC091BA3F3FF5FD3BA /* Pods-VietFoodTests.debug.xcconfig */,
+				94450AADB078D1D0EA544C3E /* Pods-VietFoodTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D209C1CE24FB37A400690F38 = {
 			isa = PBXGroup;
 			children = (
 				D209C1D924FB37A400690F38 /* VietFood */,
 				D209C1F324FB37A500690F38 /* VietFoodTests */,
 				D209C1D824FB37A400690F38 /* Products */,
+				578D61E686E0F0414A6B3548 /* Pods */,
+				2033075E05723BD2A31EC8AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,10 +124,11 @@
 		D209C1D924FB37A400690F38 /* VietFood */ = {
 			isa = PBXGroup;
 			children = (
+				D266D5E624FB7E7100985735 /* Helper */,
+				D24E816824FB3A90003E91BF /* Business */,
+				D24E816724FB3A78003E91BF /* ViewComponent */,
+				D24E816624FB3A6C003E91BF /* ViewController */,
 				D209C1DA24FB37A400690F38 /* AppDelegate.swift */,
-				D209C1DC24FB37A400690F38 /* SceneDelegate.swift */,
-				D209C1DE24FB37A400690F38 /* ViewController.swift */,
-				D209C1E024FB37A400690F38 /* Main.storyboard */,
 				D209C1E624FB37A500690F38 /* Assets.xcassets */,
 				D209C1E824FB37A500690F38 /* LaunchScreen.storyboard */,
 				D209C1EB24FB37A500690F38 /* Info.plist */,
@@ -102,6 +146,48 @@
 			path = VietFoodTests;
 			sourceTree = "<group>";
 		};
+		D24E816624FB3A6C003E91BF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D209C1DE24FB37A400690F38 /* DashboardViewController.swift */,
+				D266D5ED24FB7F9800985735 /* CameraViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D24E816724FB3A78003E91BF /* ViewComponent */ = {
+			isa = PBXGroup;
+			children = (
+				D266D5DF24FB617900985735 /* Extensions */,
+				D24E816C24FB3D51003E91BF /* ImageCarousel.swift */,
+			);
+			path = ViewComponent;
+			sourceTree = "<group>";
+		};
+		D24E816824FB3A90003E91BF /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		D266D5DF24FB617900985735 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D266D5E024FB618E00985735 /* ViewExtensions.swift */,
+				D266D5E324FB7B2E00985735 /* ButtonExtensions.swift */,
+				D266D5EA24FB7EB500985735 /* ColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D266D5E624FB7E7100985735 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D209C1F924FB37A500690F38 /* Build configuration list for PBXNativeTarget "VietFood" */;
 			buildPhases = (
+				2556957CE7B9F857F9F18F63 /* [CP] Check Pods Manifest.lock */,
 				D209C1D324FB37A400690F38 /* Sources */,
 				D209C1D424FB37A400690F38 /* Frameworks */,
 				D209C1D524FB37A400690F38 /* Resources */,
+				73E16CA34CDA00C131C32FF3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D209C1FC24FB37A500690F38 /* Build configuration list for PBXNativeTarget "VietFoodTests" */;
 			buildPhases = (
+				ADE29D0B1DC9E6B55CB669A7 /* [CP] Check Pods Manifest.lock */,
 				D209C1EC24FB37A500690F38 /* Sources */,
 				D209C1ED24FB37A500690F38 /* Frameworks */,
 				D209C1EE24FB37A500690F38 /* Resources */,
@@ -185,7 +274,6 @@
 			files = (
 				D209C1EA24FB37A500690F38 /* LaunchScreen.storyboard in Resources */,
 				D209C1E724FB37A500690F38 /* Assets.xcassets in Resources */,
-				D209C1E224FB37A400690F38 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,15 +286,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2556957CE7B9F857F9F18F63 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VietFood-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73E16CA34CDA00C131C32FF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VietFood/Pods-VietFood-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VietFood/Pods-VietFood-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VietFood/Pods-VietFood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADE29D0B1DC9E6B55CB669A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VietFoodTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D209C1D324FB37A400690F38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D209C1DF24FB37A400690F38 /* ViewController.swift in Sources */,
+				D209C1DF24FB37A400690F38 /* DashboardViewController.swift in Sources */,
 				D209C1E524FB37A400690F38 /* VietFood.xcdatamodeld in Sources */,
+				D24E816D24FB3D51003E91BF /* ImageCarousel.swift in Sources */,
+				D266D5E424FB7B2E00985735 /* ButtonExtensions.swift in Sources */,
+				D266D5E124FB618E00985735 /* ViewExtensions.swift in Sources */,
+				D266D5EE24FB7F9800985735 /* CameraViewController.swift in Sources */,
 				D209C1DB24FB37A400690F38 /* AppDelegate.swift in Sources */,
-				D209C1DD24FB37A400690F38 /* SceneDelegate.swift in Sources */,
+				D266D5EB24FB7EB500985735 /* ColorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D209C1F524FB37A500690F38 /* VietFoodTests.swift in Sources */,
+				D266D5E524FB7B2E00985735 /* ButtonExtensions.swift in Sources */,
+				D266D5E224FB618E00985735 /* ViewExtensions.swift in Sources */,
+				D24E816E24FB3D51003E91BF /* ImageCarousel.swift in Sources */,
+				D266D5EC24FB7EB500985735 /* ColorExtensions.swift in Sources */,
+				D266D5EF24FB7F9800985735 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,14 +390,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D209C1E024FB37A400690F38 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D209C1E124FB37A400690F38 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D209C1E824FB37A500690F38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -298,7 +451,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -352,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -364,6 +517,7 @@
 		};
 		D209C1FA24FB37A500690F38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F21BAE2228FD39FCB061CCE /* Pods-VietFood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -382,6 +536,7 @@
 		};
 		D209C1FB24FB37A500690F38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDDD02F98D4293AB67460027 /* Pods-VietFood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -400,6 +555,7 @@
 		};
 		D209C1FD24FB37A500690F38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECCBB7BC091BA3F3FF5FD3BA /* Pods-VietFoodTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -422,6 +578,7 @@
 		};
 		D209C1FE24FB37A500690F38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94450AADB078D1D0EA544C3E /* Pods-VietFoodTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

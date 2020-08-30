@@ -1,0 +1,6 @@
+framework module Pods_VietFood {
+  umbrella header "Pods-VietFood-umbrella.h"
+
+  export *
+  module * { export * }
+}
