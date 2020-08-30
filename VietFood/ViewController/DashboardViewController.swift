@@ -103,7 +103,7 @@ class DashboardViewController: UIViewController {
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.9) {
             UIView.animate(withDuration: 0.3) {
                 self.nextButton.transform = .identity
             }
@@ -154,9 +154,16 @@ class DashboardViewController: UIViewController {
         nextButton.setTitle("KHÁM PHÁ NGAY", for: .normal)
         nextButton.setTitleColor(.white, for: .normal)
         nextButton.layer.cornerRadius = 10
+        nextButton.addTarget(self, action: #selector(openCameraViewController), for: .touchUpInside)
         
         separatorLine.layer.cornerRadius = 2.5
         separatorLine.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+    }
+    
+    @objc func openCameraViewController() {
+        let vc = CameraViewController()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
