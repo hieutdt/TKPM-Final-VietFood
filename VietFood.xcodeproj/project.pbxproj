@@ -25,6 +25,8 @@
 		D266D5EF24FB7F9800985735 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D266D5ED24FB7F9800985735 /* CameraViewController.swift */; };
 		D2ED588224FB9F4E000B3D9A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED588124FB9F4E000B3D9A /* ActionButton.swift */; };
 		D2ED588324FB9F4E000B3D9A /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED588124FB9F4E000B3D9A /* ActionButton.swift */; };
+		D2ED588524FBB3C7000B3D9A /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED588424FBB3C7000B3D9A /* PreviewImageViewController.swift */; };
+		D2ED588624FBB3C7000B3D9A /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ED588424FBB3C7000B3D9A /* PreviewImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		D266D5EA24FB7EB500985735 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		D266D5ED24FB7F9800985735 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D2ED588124FB9F4E000B3D9A /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		D2ED588424FBB3C7000B3D9A /* PreviewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		DDDD02F98D4293AB67460027 /* Pods-VietFood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VietFood.release.xcconfig"; path = "Target Support Files/Pods-VietFood/Pods-VietFood.release.xcconfig"; sourceTree = "<group>"; };
 		ECCBB7BC091BA3F3FF5FD3BA /* Pods-VietFoodTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VietFoodTests.debug.xcconfig"; path = "Target Support Files/Pods-VietFoodTests/Pods-VietFoodTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +154,7 @@
 			children = (
 				D209C1DE24FB37A400690F38 /* DashboardViewController.swift */,
 				D266D5ED24FB7F9800985735 /* CameraViewController.swift */,
+				D2ED588424FBB3C7000B3D9A /* PreviewImageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -360,6 +364,7 @@
 				D24E816D24FB3D51003E91BF /* ImageCarousel.swift in Sources */,
 				D266D5E124FB618E00985735 /* ViewExtensions.swift in Sources */,
 				D2ED588224FB9F4E000B3D9A /* ActionButton.swift in Sources */,
+				D2ED588524FBB3C7000B3D9A /* PreviewImageViewController.swift in Sources */,
 				D266D5EE24FB7F9800985735 /* CameraViewController.swift in Sources */,
 				D209C1DB24FB37A400690F38 /* AppDelegate.swift in Sources */,
 				D266D5EB24FB7EB500985735 /* ColorExtensions.swift in Sources */,
@@ -371,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D209C1F524FB37A500690F38 /* VietFoodTests.swift in Sources */,
+				D2ED588624FBB3C7000B3D9A /* PreviewImageViewController.swift in Sources */,
 				D266D5E224FB618E00985735 /* ViewExtensions.swift in Sources */,
 				D24E816E24FB3D51003E91BF /* ImageCarousel.swift in Sources */,
 				D266D5EC24FB7EB500985735 /* ColorExtensions.swift in Sources */,

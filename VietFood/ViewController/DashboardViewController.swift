@@ -30,6 +30,9 @@ class DashboardViewController: UIViewController {
     
     private var bottomViewHeightConstraint: NSLayoutConstraint?
     
+    // Image picker
+    private var imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,7 +72,7 @@ class DashboardViewController: UIViewController {
                                      backgroundColor: .white,
                                      highlightBackgroundColor: .primaryLight,
                                      action: {
-                                        
+                                        self.openGalleryTapped()
         })
         galleryButton?.layer.borderColor = UIColor.primary.cgColor
         galleryButton?.layer.borderWidth = 2
@@ -239,6 +242,40 @@ class DashboardViewController: UIViewController {
     
     private func openCameraTapped() {
         
+    }
+    
+    private func openGalleryTapped() {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
+
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = false
+
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+}
+
+extension DashboardViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        var newImage: UIImage?
+        if let possibleImage = info[.editedImage] as? UIImage {
+            newImage = possibleImage
+        } else if let possibleImage = info[.originalImage] as? UIImage {
+            newImage = possibleImage
+        } else {
+            return
+        }
+
+        dismiss(animated: true, completion: {
+            let vc = PreviewImageViewController()
+            vc.image = newImage!
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
     }
 }
 
