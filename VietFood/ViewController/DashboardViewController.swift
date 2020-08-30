@@ -36,14 +36,15 @@ class DashboardViewController: UIViewController {
         // Init views
         imageCarousel.type = .remoteImage
         imageCarousel.urlData = [
-            "https://monngonbamien.org/wp-content/uploads/2019/10/cach-nau-bun-bo-hue-mien-nam-de-ban-don-gia-chuan-vi-ngon-nhat.jpg",
+            "https://mykitchies.files.wordpress.com/2018/10/2018-10-14-12-19-441565186905.jpg?w=1080",
             "https://vcdn-dulich.vnecdn.net/2018/10/29/500px-Phohaitrieu-6059-1540791323.jpg",
             "https://images.foody.vn/res/g104/1030781/prof/s640x400/foody-upload-api-foody-mobile-foody-upload-api-foo-200619091742.jpg",
             "https://cdn.cet.edu.vn/wp-content/uploads/2019/11/banh-xeo-mien-bac.jpg"
         ]
         
+        self.view.backgroundColor = .white
         bottomView.backgroundColor = .white
-        dimLayer.backgroundColor = UIColor.black.withAlphaComponent(0.4)
+        dimLayer.backgroundColor = UIColor.black
         
         // Add all subviews
         self.view.addSubview(imageCarousel)
@@ -86,7 +87,10 @@ class DashboardViewController: UIViewController {
 
         imageCarousel.reloadData()
         
+        // Set up for animate
         self.bottomView.transform = CGAffineTransform(translationX: 0, y: 230)
+        self.dimLayer.alpha = 0
+        self.nextButton.transform = CGAffineTransform(translationX: 0, y: 230)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -95,13 +99,20 @@ class DashboardViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             UIView.animate(withDuration: 0.3) {
                 self.bottomView.transform = .identity
+                self.dimLayer.alpha = 0.4
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            UIView.animate(withDuration: 0.3) {
+                self.nextButton.transform = .identity
             }
         }
     }
     
     private func initBottomView() {
         // Create frame of bottomView
-        bottomView.layer.shadowRadius = 10
+        bottomView.layer.shadowRadius = 20
         bottomView.layer.shadowColor = UIColor.black.cgColor
         bottomView.layer.shadowOffset = .zero
         bottomView.layer.shadowOpacity = 0.7
