@@ -18,10 +18,17 @@ class DashboardViewController: UIViewController {
     private var separatorLine = UIView()
     private var titleLabel = UILabel()
     private var descriptionLabel = UILabel()
-    private var nextButton = UIButton()
+    private var nextButton: ActionButton?
+    private var galleryButton: ActionButton?
+    private var cameraButton: ActionButton?
 
     private var frameStep = 1
     private var titleLabelTopConstraint: NSLayoutConstraint?
+    
+    private let bottomViewHeight: CGFloat = 230
+    private let actionButtonHeight: CGFloat = 80
+    
+    private var bottomViewHeightConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,14 +53,48 @@ class DashboardViewController: UIViewController {
         bottomView.backgroundColor = .white
         dimLayer.backgroundColor = UIColor.black
         
+        // Init all buttons
+        nextButton = ActionButton(title: "KHÁM PHÁ NGAY",
+                                    titleColor: .white,
+                                    titleHighlightColor: .white,
+                                    backgroundColor: .primary,
+                                    highlightBackgroundColor: .primaryHighlight,
+                                    action: {
+                                        self.nextTapped()
+        })
+        
+        galleryButton = ActionButton(title: "SỬ DỤNG THƯ VIỆN ẢNH",
+                                     titleColor: .primary,
+                                     titleHighlightColor: .primaryHighlight,
+                                     backgroundColor: .white,
+                                     highlightBackgroundColor: .primaryLight,
+                                     action: {
+                                        
+        })
+        galleryButton?.layer.borderColor = UIColor.primary.cgColor
+        galleryButton?.layer.borderWidth = 2
+        galleryButton?.showShadow = false
+        
+        cameraButton = ActionButton(title: "SỬ DỤNG CAMERA",
+                                    titleColor: .white,
+                                    titleHighlightColor: .white,
+                                    backgroundColor: .primary,
+                                    highlightBackgroundColor: .primaryHighlight,
+                                    action: {
+                                        self.openCameraTapped()
+        })
+        cameraButton?.showShadow = false
+        
         // Add all subviews
         self.view.addSubview(imageCarousel)
         self.view.addSubview(dimLayer)
         self.view.addSubview(bottomView)
         
         bottomView.addSubview(descriptionLabel)
-        bottomView.addSubview(nextButton)
+        bottomView.addSubview(nextButton!)
         bottomView.addSubview(separatorLine)
+        bottomView.addSubview(cameraButton!)
+        bottomView.addSubview(galleryButton!)
         
         imageCarousel.translatesAutoresizingMaskIntoConstraints = false
         bottomView.translatesAutoresizingMaskIntoConstraints = false
@@ -76,11 +117,12 @@ class DashboardViewController: UIViewController {
             dimLayer.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
 
+        self.bottomViewHeightConstraint = bottomView.heightAnchor.constraint(equalToConstant: bottomViewHeight)
         NSLayoutConstraint.activate([
             bottomView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             bottomView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             bottomView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            bottomView.heightAnchor.constraint(equalToConstant: 230)
+            self.bottomViewHeightConstraint!
         ])
         
         initBottomView()
@@ -88,9 +130,9 @@ class DashboardViewController: UIViewController {
         imageCarousel.reloadData()
         
         // Set up for animate
-        self.bottomView.transform = CGAffineTransform(translationX: 0, y: 230)
+        self.bottomView.transform = CGAffineTransform(translationX: 0, y: bottomViewHeight)
+        self.nextButton!.transform = CGAffineTransform(translationX: 0, y: bottomViewHeight)
         self.dimLayer.alpha = 0
-        self.nextButton.transform = CGAffineTransform(translationX: 0, y: 230)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -103,26 +145,25 @@ class DashboardViewController: UIViewController {
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.9) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
             UIView.animate(withDuration: 0.3) {
-                self.nextButton.transform = .identity
+                self.nextButton!.transform = .identity
             }
         }
     }
     
     private func initBottomView() {
         // Create frame of bottomView
-        bottomView.layer.shadowRadius = 20
-        bottomView.layer.shadowColor = UIColor.black.cgColor
-        bottomView.layer.shadowOffset = .zero
-        bottomView.layer.shadowOpacity = 0.7
+        bottomView.dropShadow(shadowRadius: 20)
         bottomView.layer.cornerRadius = 30
         bottomView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         // Layout
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        nextButton.translatesAutoresizingMaskIntoConstraints = false
+        nextButton!.translatesAutoresizingMaskIntoConstraints = false
         separatorLine.translatesAutoresizingMaskIntoConstraints = false
+        cameraButton!.translatesAutoresizingMaskIntoConstraints = false
+        galleryButton?.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             separatorLine.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 15),
@@ -136,11 +177,26 @@ class DashboardViewController: UIViewController {
             descriptionLabel.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 10),
             descriptionLabel.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -10)
         ])
+        
         NSLayoutConstraint.activate([
-            nextButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
-            nextButton.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 10),
-            nextButton.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -10),
-            nextButton.heightAnchor.constraint(equalToConstant: 80)
+            nextButton!.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            nextButton!.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 10),
+            nextButton!.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -10),
+            nextButton!.heightAnchor.constraint(equalToConstant: actionButtonHeight)
+        ])
+        
+        NSLayoutConstraint.activate([
+            cameraButton!.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 20),
+            cameraButton!.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 10),
+            cameraButton!.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -10),
+            cameraButton!.heightAnchor.constraint(equalToConstant: actionButtonHeight)
+        ])
+        
+        NSLayoutConstraint.activate([
+            galleryButton!.topAnchor.constraint(equalTo: cameraButton!.bottomAnchor, constant: 20),
+            galleryButton!.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 10),
+            galleryButton!.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -10),
+            galleryButton!.heightAnchor.constraint(equalToConstant: actionButtonHeight)
         ])
         
         // Init UI for subviews
@@ -149,21 +205,40 @@ class DashboardViewController: UIViewController {
         descriptionLabel.numberOfLines = 5
         descriptionLabel.textAlignment = .center
         
-        nextButton.backgroundColor = .primary
-        nextButton.setBackgroundColor(color: .primaryHighlight, forState: .highlighted)
-        nextButton.setTitle("KHÁM PHÁ NGAY", for: .normal)
-        nextButton.setTitleColor(.white, for: .normal)
-        nextButton.layer.cornerRadius = 10
-        nextButton.addTarget(self, action: #selector(openCameraViewController), for: .touchUpInside)
-        
         separatorLine.layer.cornerRadius = 2.5
         separatorLine.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        
+        cameraButton?.isHidden = true
+        galleryButton?.isHidden = true
     }
     
     @objc func openCameraViewController() {
         let vc = CameraViewController()
         
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    // MARK: - Actions
+    
+    private func nextTapped() {
+        self.nextButton?.isHidden = true
+        self.cameraButton?.isHidden = false
+        self.galleryButton?.isHidden = false
+        self.cameraButton?.transform = CGAffineTransform(translationX: 0, y: 300)
+        self.galleryButton?.transform = CGAffineTransform(translationX: 0, y: 300)
+        
+        self.bottomViewHeightConstraint?.constant = 350
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutSubviews()
+            self.cameraButton?.transform = .identity
+            self.galleryButton?.transform = .identity
+        }
+        
+    }
+    
+    private func openCameraTapped() {
+        
     }
 }
 

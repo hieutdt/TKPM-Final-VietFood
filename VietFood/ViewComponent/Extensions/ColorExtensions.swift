@@ -21,4 +21,10 @@ extension UIColor {
             UIColor(displayP3Red: 203/255, green: 67/255, blue: 53/255, alpha: 1)
         }
     }
+    
+    open class var primaryLight: UIColor {
+        get {
+            UIColor(displayP3Red: 253/255, green: 237/255, blue: 236/255, alpha: 1)
+        }
+    }
 }
