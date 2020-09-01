@@ -82,12 +82,14 @@ class PreviewImageViewController: UIViewController {
     func predictImage() {
         let vc = AnalyzeViewController()
         vc.image = imageView.image
+        vc.mode = .predict
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func detectImage() {
         let vc = AnalyzeViewController()
         vc.image = imageView.image
+        vc.mode = .detect
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

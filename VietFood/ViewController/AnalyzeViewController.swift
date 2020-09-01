@@ -12,9 +12,17 @@ import Alamofire
 
 let serverUrl = "http://e476a63dd827.ngrok.io/"
 
+enum AnalyzeMode {
+    
+    case detect
+    
+    case predict
+}
+
 class AnalyzeViewController: UIViewController {
     
     public var image: UIImage?
+    public var mode: AnalyzeMode = .predict
     
     var predicted: String = ""
     var score: Float = 0.0
@@ -29,7 +37,13 @@ class AnalyzeViewController: UIViewController {
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.tintColor = .primary
         
-        image = UIImage(named: "banhxeo")
+        if self.mode == .detect {
+            self.title = "Nhận diện món ăn"
+        } else {
+            self.title = "Dự đoán món ăn"
+        }
+        
+//        image = UIImage(named: "banhxeo")
         imageView.image = image
         predictedLabel.font = UIFont.systemFont(ofSize: 24)
         scoreLabel.font = UIFont.systemFont(ofSize: 24)
@@ -69,8 +83,39 @@ class AnalyzeViewController: UIViewController {
         
         /// Request
         let base64string = getBase64String(image: self.image!)
-        self.requestPredict(base64: base64string)
+        if self.mode == .predict {
+            self.requestPredict(base64: base64string)
+        } else {
+            self.requestDetect(base64: base64string)
+        }
     }
+    
+    func updateResultUI() {
+        if mode == .predict {
+            predictedLabel.text = "Kết quả dự đoán: \(self.predicted)"
+            scoreLabel.text = "Độ chính xác: \(self.score)"
+        } else {
+            imageView.image = self.image
+            predictedLabel.isHidden = true
+            scoreLabel.isHidden = true
+        }
+    }
+    
+    // MARK: Base64 encode/decode
+    
+    func getBase64String(image: UIImage) -> String {
+        let imageData = image.pngData()
+        let imageBase64String = imageData?.base64EncodedString()
+        
+        return imageBase64String ?? ""
+    }
+    
+    func decodeBase64String(string: String) -> UIImage? {
+        let imageData = Data(base64Encoded: string)
+        return UIImage(data: imageData!)
+    }
+    
+    // MARK: - Requests
     
     func requestPredict(base64: String) {
         let url = URL(string: serverUrl)
@@ -117,15 +162,48 @@ class AnalyzeViewController: UIViewController {
         }
     }
     
-    func getBase64String(image: UIImage) -> String {
-        let imageData = image.pngData()
-        let imageBase64String = imageData?.base64EncodedString()
+    func requestDetect(base64: String) {
+        let url = URL(string: serverUrl)
         
-        return imageBase64String ?? ""
+        if url == nil {
+            // Show error
+            return
+        }
+        
+        var headers = HTTPHeaders()
+        headers = [
+            "Content-Type" :"application/json",
+            "Accept": "application/json"
+        ]
+        
+        let params: [String : String] = [
+            "img_encoded" : base64,
+            "lang" : "custom",
+            "type" : "detection"
+        ]
+        
+        AF.request(serverUrl,
+                   method: .post,
+                   parameters: params,
+                   encoding: JSONEncoding.default,
+                   headers: headers).responseJSON { (response) in
+                    
+                    self.hideEmbeddedLoading()
+                    
+                    switch response.result {
+                        
+                    case .success(_):
+                        let json = response.value as! NSDictionary
+                        self.image = self.decodeBase64String(string: json.value(forKey: "predicted") as! String)
+                        self.updateResultUI()
+                        
+                        break
+                        
+                    case .failure(let error):
+                        print(error)
+                        break
+                    }
+        }
     }
     
-    func updateResultUI() {
-        predictedLabel.text = "Kết quả dự đoán: \(self.predicted)"
-        scoreLabel.text = "Độ chính xác: \(self.score)"
-    }
 }
