@@ -65,7 +65,7 @@ class ActionButton: UIButton {
         self.dropShadow(shadowRadius: 2)
         self.layer.cornerRadius = 15
         
-        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         self.setTitle(self.text, for: .normal)
         self.setTitleColor(self.titleColor, for: .normal)
         self.setTitleColor(self.titleHighlightColor, for: .highlighted)

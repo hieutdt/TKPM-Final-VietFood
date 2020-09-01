@@ -25,8 +25,8 @@ class DashboardViewController: UIViewController {
     private var frameStep = 1
     private var titleLabelTopConstraint: NSLayoutConstraint?
     
-    private let bottomViewHeight: CGFloat = 230
-    private let actionButtonHeight: CGFloat = 80
+    private let bottomViewHeight: CGFloat = 180
+    private let actionButtonHeight: CGFloat = 50
     
     private var bottomViewHeightConstraint: NSLayoutConstraint?
     
@@ -144,7 +144,7 @@ class DashboardViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
             UIView.animate(withDuration: 0.3) {
                 self.bottomView.transform = .identity
-                self.dimLayer.alpha = 0.4
+                self.dimLayer.alpha = 0.6
             }
         }
         
@@ -196,7 +196,7 @@ class DashboardViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            galleryButton!.topAnchor.constraint(equalTo: cameraButton!.bottomAnchor, constant: 20),
+            galleryButton!.topAnchor.constraint(equalTo: cameraButton!.bottomAnchor, constant: 10),
             galleryButton!.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor, constant: 10),
             galleryButton!.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor, constant: -10),
             galleryButton!.heightAnchor.constraint(equalToConstant: actionButtonHeight)
@@ -230,7 +230,7 @@ class DashboardViewController: UIViewController {
         self.cameraButton?.transform = CGAffineTransform(translationX: 0, y: 300)
         self.galleryButton?.transform = CGAffineTransform(translationX: 0, y: 300)
         
-        self.bottomViewHeightConstraint?.constant = 350
+        self.bottomViewHeightConstraint?.constant = 250
         
         UIView.animate(withDuration: 0.3) {
             self.view.layoutSubviews()
@@ -241,7 +241,8 @@ class DashboardViewController: UIViewController {
     }
     
     private func openCameraTapped() {
-        
+        let vc = CameraViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func openGalleryTapped() {
