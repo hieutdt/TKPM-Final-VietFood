@@ -9,10 +9,12 @@
 import UIKit
 import SVProgressHUD
 
+var whiteView = UIView()
+
 extension UIViewController {
     
     func showEmbeddedLoading(text: String) {
-        let whiteView = UIView(frame: self.view.frame)
+        whiteView = UIView(frame: self.view.frame)
         whiteView.backgroundColor = .white
         self.view.addSubview(whiteView)
         
@@ -27,5 +29,6 @@ extension UIViewController {
     
     func hideEmbeddedLoading() {
         SVProgressHUD.dismiss()
+        whiteView.removeFromSuperview()
     }
 }

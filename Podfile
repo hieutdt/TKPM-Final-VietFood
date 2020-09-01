@@ -8,6 +8,7 @@ target 'VietFood' do
   # Pods for VietFood
   pod 'SDWebImage'
   pod 'SVProgressHUD'
+  pod 'Alamofire', '~> 5.2'
 
   target 'VietFoodTests' do
     inherit! :search_paths

@@ -34,6 +34,11 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Chúng tôi cần sử dụng camera của bạn để có thể chụp ảnh và nhận diện món ăn!</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

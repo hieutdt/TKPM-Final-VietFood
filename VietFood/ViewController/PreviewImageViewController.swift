@@ -17,24 +17,35 @@ class PreviewImageViewController: UIViewController {
     }
     
     var imageView = UIImageView()
-    var sendButton: ActionButton?
+    var predictButton: ActionButton?
+    var detectButton: ActionButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.tintColor = .primary
         self.title = "Preview"
         
-        sendButton = ActionButton(title: "Phân tích",
+        predictButton = ActionButton(title: "Dự đoán",
                                       titleColor: .white,
                                       titleHighlightColor: .white,
                                       backgroundColor: .primary,
                                       highlightBackgroundColor: .primaryHighlight) {
-                                        self.analyzeImage()
+                                        self.predictImage()
         }
+        
+        detectButton = ActionButton(title: "Nhận diện",
+                                    titleColor: .primary,
+                                    titleHighlightColor: .primaryHighlight,
+                                    backgroundColor: .white,
+                                    highlightBackgroundColor: .primaryLight,
+                                    action: {
+                                        self.detectImage()
+        })
         
         self.view.backgroundColor = .white
         self.view.addSubview(imageView)
-        self.view.addSubview(sendButton!)
+        self.view.addSubview(predictButton!)
+        self.view.addSubview(detectButton!)
         
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .white
@@ -47,21 +58,36 @@ class PreviewImageViewController: UIViewController {
             imageView.topAnchor.constraint(equalTo: guide.topAnchor, constant: 30),
             imageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: sendButton!.topAnchor, constant: -30)
+            imageView.bottomAnchor.constraint(equalTo: predictButton!.topAnchor, constant: -30)
         ])
         
-        sendButton!.translatesAutoresizingMaskIntoConstraints = false
+        predictButton!.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            sendButton!.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
-            sendButton!.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10),
-            sendButton!.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
-            sendButton!.heightAnchor.constraint(equalToConstant: 60),
-            sendButton!.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -20)
+            predictButton!.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            predictButton!.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10),
+            predictButton!.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
+            predictButton!.heightAnchor.constraint(equalToConstant: 60),
+        ])
+        
+        detectButton!.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            detectButton!.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            detectButton!.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10),
+            detectButton!.topAnchor.constraint(equalTo: predictButton!.bottomAnchor, constant: 10),
+            detectButton!.heightAnchor.constraint(equalToConstant: 60),
+            detectButton!.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -10)
         ])
     }
     
-    func analyzeImage() {
+    func predictImage() {
         let vc = AnalyzeViewController()
+        vc.image = imageView.image
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func detectImage() {
+        let vc = AnalyzeViewController()
+        vc.image = imageView.image
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
