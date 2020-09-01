@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04D84FE324FE378E009167E0 /* AnalyzeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D84FE224FE378E009167E0 /* AnalyzeViewController.swift */; };
+		04D84FE524FE400A009167E0 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D84FE424FE400A009167E0 /* ViewControllerExtensions.swift */; };
 		7B29324E3B16DD8F6FABFB16 /* Pods_VietFoodTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D0991ACC43AC54E516FAE1 /* Pods_VietFoodTests.framework */; };
 		9D400B5C1D3868ED2DE9B94F /* Pods_VietFood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487173BB86AAE61DCE15B0AF /* Pods_VietFood.framework */; };
 		D209C1DB24FB37A400690F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209C1DA24FB37A400690F38 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		04D84FE224FE378E009167E0 /* AnalyzeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeViewController.swift; sourceTree = "<group>"; };
+		04D84FE424FE400A009167E0 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		1F21BAE2228FD39FCB061CCE /* Pods-VietFood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VietFood.debug.xcconfig"; path = "Target Support Files/Pods-VietFood/Pods-VietFood.debug.xcconfig"; sourceTree = "<group>"; };
 		487173BB86AAE61DCE15B0AF /* Pods_VietFood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VietFood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D0991ACC43AC54E516FAE1 /* Pods_VietFoodTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VietFoodTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 			children = (
 				D266D5E024FB618E00985735 /* ViewExtensions.swift */,
 				D266D5EA24FB7EB500985735 /* ColorExtensions.swift */,
+				04D84FE424FE400A009167E0 /* ViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04D84FE524FE400A009167E0 /* ViewControllerExtensions.swift in Sources */,
 				D209C1DF24FB37A400690F38 /* DashboardViewController.swift in Sources */,
 				D209C1E524FB37A400690F38 /* VietFood.xcdatamodeld in Sources */,
 				D24E816D24FB3D51003E91BF /* ImageCarousel.swift in Sources */,

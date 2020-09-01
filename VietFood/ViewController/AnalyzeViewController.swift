@@ -14,9 +14,16 @@ class AnalyzeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.tintColor = .primary
         
-        SVProgressHUD.setContainerView(self.view)
-        SVProgressHUD.setBackgroundColor(.white)
-        SVProgressHUD.show()
+        self.showEmbeddedLoading(text: "Đang phân tích, bạn chờ xíu nhé!")
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            self.hideEmbeddedLoading()
+        }
+    }
+    
+    func requestAnalyze() {
+        
     }
 }

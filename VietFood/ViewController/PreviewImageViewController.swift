@@ -21,7 +21,9 @@ class PreviewImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.tintColor = .primary
+        self.title = "Preview"
+        
         sendButton = ActionButton(title: "Phân tích",
                                       titleColor: .white,
                                       titleHighlightColor: .white,
